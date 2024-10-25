@@ -1,0 +1,1155 @@
+
+Project_Final.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000062e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000032  00800060  0000062e  000006c2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000007  00800092  00800092  000006f4  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000006f4  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000724  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000170  00000000  00000000  00000760  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00001709  00000000  00000000  000008d0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000b38  00000000  00000000  00001fd9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000dc2  00000000  00000000  00002b11  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  000002dc  00000000  00000000  000038d4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000051c  00000000  00000000  00003bb0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000b69  00000000  00000000  000040cc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000118  00000000  00000000  00004c35  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 3a 00 	jmp	0x74	; 0x74 <__ctors_end>
+   4:	0c 94 d3 01 	jmp	0x3a6	; 0x3a6 <__vector_1>
+   8:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+   c:	0c 94 1c 02 	jmp	0x438	; 0x438 <__vector_3>
+  10:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  14:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  18:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  1c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  20:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  24:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  28:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  2c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  30:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  34:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  38:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  3c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  40:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  44:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  48:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  4c:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  50:	0c 94 57 00 	jmp	0xae	; 0xae <__bad_interrupt>
+  54:	cc 00       	.word	0x00cc	; ????
+  56:	ae 00       	.word	0x00ae	; ????
+  58:	b0 00       	.word	0x00b0	; ????
+  5a:	b2 00       	.word	0x00b2	; ????
+  5c:	b4 00       	.word	0x00b4	; ????
+  5e:	b6 00       	.word	0x00b6	; ????
+  60:	b8 00       	.word	0x00b8	; ????
+  62:	ba 00       	.word	0x00ba	; ????
+  64:	bc 00       	.word	0x00bc	; ????
+  66:	be 00       	.word	0x00be	; ????
+  68:	c0 00       	.word	0x00c0	; ????
+  6a:	c2 00       	.word	0x00c2	; ????
+  6c:	c4 00       	.word	0x00c4	; ????
+  6e:	c6 00       	.word	0x00c6	; ????
+  70:	c8 00       	.word	0x00c8	; ????
+  72:	ca 00       	.word	0x00ca	; ????
+
+00000074 <__ctors_end>:
+  74:	11 24       	eor	r1, r1
+  76:	1f be       	out	0x3f, r1	; 63
+  78:	cf e5       	ldi	r28, 0x5F	; 95
+  7a:	d8 e0       	ldi	r29, 0x08	; 8
+  7c:	de bf       	out	0x3e, r29	; 62
+  7e:	cd bf       	out	0x3d, r28	; 61
+
+00000080 <__do_copy_data>:
+  80:	10 e0       	ldi	r17, 0x00	; 0
+  82:	a0 e6       	ldi	r26, 0x60	; 96
+  84:	b0 e0       	ldi	r27, 0x00	; 0
+  86:	ee e2       	ldi	r30, 0x2E	; 46
+  88:	f6 e0       	ldi	r31, 0x06	; 6
+  8a:	02 c0       	rjmp	.+4      	; 0x90 <__do_copy_data+0x10>
+  8c:	05 90       	lpm	r0, Z+
+  8e:	0d 92       	st	X+, r0
+  90:	a2 39       	cpi	r26, 0x92	; 146
+  92:	b1 07       	cpc	r27, r17
+  94:	d9 f7       	brne	.-10     	; 0x8c <__do_copy_data+0xc>
+
+00000096 <__do_clear_bss>:
+  96:	20 e0       	ldi	r18, 0x00	; 0
+  98:	a2 e9       	ldi	r26, 0x92	; 146
+  9a:	b0 e0       	ldi	r27, 0x00	; 0
+  9c:	01 c0       	rjmp	.+2      	; 0xa0 <.do_clear_bss_start>
+
+0000009e <.do_clear_bss_loop>:
+  9e:	1d 92       	st	X+, r1
+
+000000a0 <.do_clear_bss_start>:
+  a0:	a9 39       	cpi	r26, 0x99	; 153
+  a2:	b2 07       	cpc	r27, r18
+  a4:	e1 f7       	brne	.-8      	; 0x9e <.do_clear_bss_loop>
+  a6:	0e 94 a3 01 	call	0x346	; 0x346 <main>
+  aa:	0c 94 15 03 	jmp	0x62a	; 0x62a <_exit>
+
+000000ae <__bad_interrupt>:
+  ae:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000b2 <Buzzer_voidInit>:
+
+#include	"buzzer.h"
+
+
+void Buzzer_voidInit(){
+	BUZDDR |= (1<<BPIN);
+  b2:	84 b3       	in	r24, 0x14	; 20
+  b4:	80 61       	ori	r24, 0x10	; 16
+  b6:	84 bb       	out	0x14, r24	; 20
+	BUZPORT &= ~(1<<BPIN); 
+  b8:	85 b3       	in	r24, 0x15	; 21
+  ba:	8f 7e       	andi	r24, 0xEF	; 239
+  bc:	85 bb       	out	0x15, r24	; 21
+  be:	08 95       	ret
+
+000000c0 <Buzzer_voidToggle>:
+}
+
+void Buzzer_voidToggle(int delay){
+	BUZPORT |= (1<<BPIN);
+  c0:	25 b3       	in	r18, 0x15	; 21
+  c2:	20 61       	ori	r18, 0x10	; 16
+  c4:	25 bb       	out	0x15, r18	; 21
+	
+	for(int i = 0; i<delay; i++)
+  c6:	20 e0       	ldi	r18, 0x00	; 0
+  c8:	30 e0       	ldi	r19, 0x00	; 0
+  ca:	08 c0       	rjmp	.+16     	; 0xdc <Buzzer_voidToggle+0x1c>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  cc:	ef e9       	ldi	r30, 0x9F	; 159
+  ce:	ff e0       	ldi	r31, 0x0F	; 15
+  d0:	31 97       	sbiw	r30, 0x01	; 1
+  d2:	f1 f7       	brne	.-4      	; 0xd0 <Buzzer_voidToggle+0x10>
+  d4:	00 c0       	rjmp	.+0      	; 0xd6 <Buzzer_voidToggle+0x16>
+  d6:	00 00       	nop
+  d8:	2f 5f       	subi	r18, 0xFF	; 255
+  da:	3f 4f       	sbci	r19, 0xFF	; 255
+  dc:	28 17       	cp	r18, r24
+  de:	39 07       	cpc	r19, r25
+  e0:	ac f3       	brlt	.-22     	; 0xcc <Buzzer_voidToggle+0xc>
+		_delay_ms(1);
+	
+	BUZPORT &= ~(1<<BPIN);
+  e2:	85 b3       	in	r24, 0x15	; 21
+  e4:	8f 7e       	andi	r24, 0xEF	; 239
+  e6:	85 bb       	out	0x15, r24	; 21
+  e8:	08 95       	ret
+
+000000ea <INT_voidInit>:
+#include	"EXT_interrupt.h"
+
+
+void	INT_voidInit()
+{
+	sei();							// Enables SREG interrupts
+  ea:	78 94       	sei
+	GICR = 0x00;					// All interrupts initial disabled
+  ec:	1b be       	out	0x3b, r1	; 59
+	
+	MCUCR = 1<<ISC00 | 1<<ISC01;	// Trigger INT0 on rising edge
+  ee:	83 e0       	ldi	r24, 0x03	; 3
+  f0:	85 bf       	out	0x35, r24	; 53
+	MCUCSR = 1<<ISC2;				// Trigger INT2 on rising edge
+  f2:	80 e4       	ldi	r24, 0x40	; 64
+  f4:	84 bf       	out	0x34, r24	; 52
+	
+	INT0_DDR &= ~(1<<INT0P);
+  f6:	81 b3       	in	r24, 0x11	; 17
+  f8:	8b 7f       	andi	r24, 0xFB	; 251
+  fa:	81 bb       	out	0x11, r24	; 17
+	INT2_DDR &= ~(1<<INT2P);
+  fc:	87 b3       	in	r24, 0x17	; 23
+  fe:	8b 7f       	andi	r24, 0xFB	; 251
+ 100:	87 bb       	out	0x17, r24	; 23
+ 102:	08 95       	ret
+
+00000104 <INT_voidEnable>:
+}
+
+
+void	INT_voidEnable(char i)
+{
+	GICR |= (1<<i);
+ 104:	9b b7       	in	r25, 0x3b	; 59
+ 106:	21 e0       	ldi	r18, 0x01	; 1
+ 108:	30 e0       	ldi	r19, 0x00	; 0
+ 10a:	02 c0       	rjmp	.+4      	; 0x110 <INT_voidEnable+0xc>
+ 10c:	22 0f       	add	r18, r18
+ 10e:	33 1f       	adc	r19, r19
+ 110:	8a 95       	dec	r24
+ 112:	e2 f7       	brpl	.-8      	; 0x10c <INT_voidEnable+0x8>
+ 114:	29 2b       	or	r18, r25
+ 116:	2b bf       	out	0x3b, r18	; 59
+ 118:	08 95       	ret
+
+0000011a <INT_voidDisable>:
+}
+
+void	INT_voidDisable(char i)
+{
+	GICR &= ~(1<<i);
+ 11a:	9b b7       	in	r25, 0x3b	; 59
+ 11c:	21 e0       	ldi	r18, 0x01	; 1
+ 11e:	30 e0       	ldi	r19, 0x00	; 0
+ 120:	02 c0       	rjmp	.+4      	; 0x126 <INT_voidDisable+0xc>
+ 122:	22 0f       	add	r18, r18
+ 124:	33 1f       	adc	r19, r19
+ 126:	8a 95       	dec	r24
+ 128:	e2 f7       	brpl	.-8      	; 0x122 <INT_voidDisable+0x8>
+ 12a:	20 95       	com	r18
+ 12c:	29 23       	and	r18, r25
+ 12e:	2b bf       	out	0x3b, r18	; 59
+ 130:	08 95       	ret
+
+00000132 <Keypad_voidInit>:
+#include	<avr/interrupt.h>
+
+#include	"keypad.h"
+
+void	Keypad_voidInit(){
+	KDDR &= 0x0F;
+ 132:	87 b3       	in	r24, 0x17	; 23
+ 134:	8f 70       	andi	r24, 0x0F	; 15
+ 136:	87 bb       	out	0x17, r24	; 23
+	KDDR &= ~(1<<DA);
+ 138:	87 b3       	in	r24, 0x17	; 23
+ 13a:	8b 7f       	andi	r24, 0xFB	; 251
+ 13c:	87 bb       	out	0x17, r24	; 23
+	
+	KPORT &= 0x0F;
+ 13e:	88 b3       	in	r24, 0x18	; 24
+ 140:	8f 70       	andi	r24, 0x0F	; 15
+ 142:	88 bb       	out	0x18, r24	; 24
+ 144:	08 95       	ret
+
+00000146 <Keypad_charGetKey>:
+}
+
+char	Keypad_charGetKey(){
+	
+	unsigned char key = 0;
+	switch ((KIN & 0xF0)>>4)
+ 146:	86 b3       	in	r24, 0x16	; 22
+ 148:	e8 2f       	mov	r30, r24
+ 14a:	e2 95       	swap	r30
+ 14c:	ef 70       	andi	r30, 0x0F	; 15
+ 14e:	8e 2f       	mov	r24, r30
+ 150:	90 e0       	ldi	r25, 0x00	; 0
+ 152:	fc 01       	movw	r30, r24
+ 154:	e6 5d       	subi	r30, 0xD6	; 214
+ 156:	ff 4f       	sbci	r31, 0xFF	; 255
+ 158:	0c 94 0f 03 	jmp	0x61e	; 0x61e <__tablejump2__>
+	{
+	case 0: key = '1';
+	break;
+	case 1: key = '2';
+ 15c:	82 e3       	ldi	r24, 0x32	; 50
+	break;
+ 15e:	08 95       	ret
+	case 2: key = '3';
+ 160:	83 e3       	ldi	r24, 0x33	; 51
+	break;
+ 162:	08 95       	ret
+	case 3: key = 'A';
+ 164:	81 e4       	ldi	r24, 0x41	; 65
+	break;
+ 166:	08 95       	ret
+	case 4: key = '4';
+ 168:	84 e3       	ldi	r24, 0x34	; 52
+	break;
+ 16a:	08 95       	ret
+	case 5: key = '5';
+ 16c:	85 e3       	ldi	r24, 0x35	; 53
+	break;
+ 16e:	08 95       	ret
+	case 6: key = '6';
+ 170:	86 e3       	ldi	r24, 0x36	; 54
+	break;
+ 172:	08 95       	ret
+	case 7: key = 'B';
+ 174:	82 e4       	ldi	r24, 0x42	; 66
+	break;
+ 176:	08 95       	ret
+	case 8: key = '7';
+ 178:	87 e3       	ldi	r24, 0x37	; 55
+	break;
+ 17a:	08 95       	ret
+	case 9: key = '8';
+ 17c:	88 e3       	ldi	r24, 0x38	; 56
+	break;
+ 17e:	08 95       	ret
+	case 10: key = '9';
+ 180:	89 e3       	ldi	r24, 0x39	; 57
+	break;
+ 182:	08 95       	ret
+	case 11: key = 'C';
+ 184:	83 e4       	ldi	r24, 0x43	; 67
+	break;
+ 186:	08 95       	ret
+	case 12: key = '*';
+ 188:	8a e2       	ldi	r24, 0x2A	; 42
+	break;
+ 18a:	08 95       	ret
+	case 13: key = '0';
+ 18c:	80 e3       	ldi	r24, 0x30	; 48
+	break;
+ 18e:	08 95       	ret
+	case 14: key = '#';
+ 190:	83 e2       	ldi	r24, 0x23	; 35
+	break;
+ 192:	08 95       	ret
+	case 15: key = 'D';
+ 194:	84 e4       	ldi	r24, 0x44	; 68
+	break;
+ 196:	08 95       	ret
+char	Keypad_charGetKey(){
+	
+	unsigned char key = 0;
+	switch ((KIN & 0xF0)>>4)
+	{
+	case 0: key = '1';
+ 198:	81 e3       	ldi	r24, 0x31	; 49
+	case 15: key = 'D';
+	break;
+	}
+	
+	return key;
+ 19a:	08 95       	ret
+
+0000019c <LCD_voidSendCmd>:
+	case 4:		LCD_voidSendData((num/1000)%10 + 0x30);		
+	case 3:		LCD_voidSendData((num/100)%10 + 0x30);		
+	case 2:		LCD_voidSendData((num/10)%10 + 0x30);		
+	case 1:		LCD_voidSendData((num/1)%10 + 0x30);
+	}
+}
+ 19c:	8b bb       	out	0x1b, r24	; 27
+ 19e:	85 b3       	in	r24, 0x15	; 21
+ 1a0:	8f 7d       	andi	r24, 0xDF	; 223
+ 1a2:	85 bb       	out	0x15, r24	; 21
+ 1a4:	85 b3       	in	r24, 0x15	; 21
+ 1a6:	8f 7b       	andi	r24, 0xBF	; 191
+ 1a8:	85 bb       	out	0x15, r24	; 21
+ 1aa:	85 b3       	in	r24, 0x15	; 21
+ 1ac:	80 68       	ori	r24, 0x80	; 128
+ 1ae:	85 bb       	out	0x15, r24	; 21
+ 1b0:	8f e9       	ldi	r24, 0x9F	; 159
+ 1b2:	9f e0       	ldi	r25, 0x0F	; 15
+ 1b4:	01 97       	sbiw	r24, 0x01	; 1
+ 1b6:	f1 f7       	brne	.-4      	; 0x1b4 <LCD_voidSendCmd+0x18>
+ 1b8:	00 c0       	rjmp	.+0      	; 0x1ba <LCD_voidSendCmd+0x1e>
+ 1ba:	00 00       	nop
+ 1bc:	85 b3       	in	r24, 0x15	; 21
+ 1be:	8f 77       	andi	r24, 0x7F	; 127
+ 1c0:	85 bb       	out	0x15, r24	; 21
+ 1c2:	8f ed       	ldi	r24, 0xDF	; 223
+ 1c4:	9e e2       	ldi	r25, 0x2E	; 46
+ 1c6:	01 97       	sbiw	r24, 0x01	; 1
+ 1c8:	f1 f7       	brne	.-4      	; 0x1c6 <LCD_voidSendCmd+0x2a>
+ 1ca:	00 c0       	rjmp	.+0      	; 0x1cc <LCD_voidSendCmd+0x30>
+ 1cc:	00 00       	nop
+ 1ce:	08 95       	ret
+
+000001d0 <LCD_voidSendData>:
+ 1d0:	8b bb       	out	0x1b, r24	; 27
+ 1d2:	85 b3       	in	r24, 0x15	; 21
+ 1d4:	80 62       	ori	r24, 0x20	; 32
+ 1d6:	85 bb       	out	0x15, r24	; 21
+ 1d8:	85 b3       	in	r24, 0x15	; 21
+ 1da:	8f 7b       	andi	r24, 0xBF	; 191
+ 1dc:	85 bb       	out	0x15, r24	; 21
+ 1de:	85 b3       	in	r24, 0x15	; 21
+ 1e0:	80 68       	ori	r24, 0x80	; 128
+ 1e2:	85 bb       	out	0x15, r24	; 21
+ 1e4:	8f e9       	ldi	r24, 0x9F	; 159
+ 1e6:	9f e0       	ldi	r25, 0x0F	; 15
+ 1e8:	01 97       	sbiw	r24, 0x01	; 1
+ 1ea:	f1 f7       	brne	.-4      	; 0x1e8 <LCD_voidSendData+0x18>
+ 1ec:	00 c0       	rjmp	.+0      	; 0x1ee <LCD_voidSendData+0x1e>
+ 1ee:	00 00       	nop
+ 1f0:	85 b3       	in	r24, 0x15	; 21
+ 1f2:	8f 77       	andi	r24, 0x7F	; 127
+ 1f4:	85 bb       	out	0x15, r24	; 21
+ 1f6:	8f ed       	ldi	r24, 0xDF	; 223
+ 1f8:	9e e2       	ldi	r25, 0x2E	; 46
+ 1fa:	01 97       	sbiw	r24, 0x01	; 1
+ 1fc:	f1 f7       	brne	.-4      	; 0x1fa <LCD_voidSendData+0x2a>
+ 1fe:	00 c0       	rjmp	.+0      	; 0x200 <LCD_voidSendData+0x30>
+ 200:	00 00       	nop
+ 202:	08 95       	ret
+
+00000204 <LCD_voidInit>:
+ 204:	2f e7       	ldi	r18, 0x7F	; 127
+ 206:	85 eb       	ldi	r24, 0xB5	; 181
+ 208:	91 e0       	ldi	r25, 0x01	; 1
+ 20a:	21 50       	subi	r18, 0x01	; 1
+ 20c:	80 40       	sbci	r24, 0x00	; 0
+ 20e:	90 40       	sbci	r25, 0x00	; 0
+ 210:	e1 f7       	brne	.-8      	; 0x20a <LCD_voidInit+0x6>
+ 212:	00 c0       	rjmp	.+0      	; 0x214 <LCD_voidInit+0x10>
+ 214:	00 00       	nop
+ 216:	84 b3       	in	r24, 0x14	; 20
+ 218:	80 6e       	ori	r24, 0xE0	; 224
+ 21a:	84 bb       	out	0x14, r24	; 20
+ 21c:	8f ef       	ldi	r24, 0xFF	; 255
+ 21e:	8a bb       	out	0x1a, r24	; 26
+ 220:	8f e9       	ldi	r24, 0x9F	; 159
+ 222:	9f e0       	ldi	r25, 0x0F	; 15
+ 224:	01 97       	sbiw	r24, 0x01	; 1
+ 226:	f1 f7       	brne	.-4      	; 0x224 <LCD_voidInit+0x20>
+ 228:	00 c0       	rjmp	.+0      	; 0x22a <LCD_voidInit+0x26>
+ 22a:	00 00       	nop
+ 22c:	88 e3       	ldi	r24, 0x38	; 56
+ 22e:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 232:	8f e9       	ldi	r24, 0x9F	; 159
+ 234:	9f e0       	ldi	r25, 0x0F	; 15
+ 236:	01 97       	sbiw	r24, 0x01	; 1
+ 238:	f1 f7       	brne	.-4      	; 0x236 <LCD_voidInit+0x32>
+ 23a:	00 c0       	rjmp	.+0      	; 0x23c <LCD_voidInit+0x38>
+ 23c:	00 00       	nop
+ 23e:	8c e0       	ldi	r24, 0x0C	; 12
+ 240:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 244:	8f e9       	ldi	r24, 0x9F	; 159
+ 246:	9f e0       	ldi	r25, 0x0F	; 15
+ 248:	01 97       	sbiw	r24, 0x01	; 1
+ 24a:	f1 f7       	brne	.-4      	; 0x248 <LCD_voidInit+0x44>
+ 24c:	00 c0       	rjmp	.+0      	; 0x24e <LCD_voidInit+0x4a>
+ 24e:	00 00       	nop
+ 250:	86 e0       	ldi	r24, 0x06	; 6
+ 252:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 256:	8f e9       	ldi	r24, 0x9F	; 159
+ 258:	9f e0       	ldi	r25, 0x0F	; 15
+ 25a:	01 97       	sbiw	r24, 0x01	; 1
+ 25c:	f1 f7       	brne	.-4      	; 0x25a <LCD_voidInit+0x56>
+ 25e:	00 c0       	rjmp	.+0      	; 0x260 <LCD_voidInit+0x5c>
+ 260:	00 00       	nop
+ 262:	81 e0       	ldi	r24, 0x01	; 1
+ 264:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 268:	8f e9       	ldi	r24, 0x9F	; 159
+ 26a:	9f e0       	ldi	r25, 0x0F	; 15
+ 26c:	01 97       	sbiw	r24, 0x01	; 1
+ 26e:	f1 f7       	brne	.-4      	; 0x26c <LCD_voidInit+0x68>
+ 270:	00 c0       	rjmp	.+0      	; 0x272 <LCD_voidInit+0x6e>
+ 272:	00 00       	nop
+ 274:	80 e8       	ldi	r24, 0x80	; 128
+ 276:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 27a:	8f e9       	ldi	r24, 0x9F	; 159
+ 27c:	9f e0       	ldi	r25, 0x0F	; 15
+ 27e:	01 97       	sbiw	r24, 0x01	; 1
+ 280:	f1 f7       	brne	.-4      	; 0x27e <LCD_voidInit+0x7a>
+ 282:	00 c0       	rjmp	.+0      	; 0x284 <LCD_voidInit+0x80>
+ 284:	00 00       	nop
+ 286:	08 95       	ret
+
+00000288 <LCD_voidClear>:
+ 288:	81 e0       	ldi	r24, 0x01	; 1
+ 28a:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 28e:	8f e9       	ldi	r24, 0x9F	; 159
+ 290:	9f e0       	ldi	r25, 0x0F	; 15
+ 292:	01 97       	sbiw	r24, 0x01	; 1
+ 294:	f1 f7       	brne	.-4      	; 0x292 <LCD_voidClear+0xa>
+ 296:	00 c0       	rjmp	.+0      	; 0x298 <LCD_voidClear+0x10>
+ 298:	00 00       	nop
+ 29a:	08 95       	ret
+
+0000029c <LCD_voidWriteStr>:
+ 29c:	0f 93       	push	r16
+ 29e:	1f 93       	push	r17
+ 2a0:	cf 93       	push	r28
+ 2a2:	df 93       	push	r29
+ 2a4:	8c 01       	movw	r16, r24
+ 2a6:	c0 e0       	ldi	r28, 0x00	; 0
+ 2a8:	d0 e0       	ldi	r29, 0x00	; 0
+ 2aa:	03 c0       	rjmp	.+6      	; 0x2b2 <LCD_voidWriteStr+0x16>
+ 2ac:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <LCD_voidSendData>
+ 2b0:	21 96       	adiw	r28, 0x01	; 1
+ 2b2:	f8 01       	movw	r30, r16
+ 2b4:	ec 0f       	add	r30, r28
+ 2b6:	fd 1f       	adc	r31, r29
+ 2b8:	80 81       	ld	r24, Z
+ 2ba:	81 11       	cpse	r24, r1
+ 2bc:	f7 cf       	rjmp	.-18     	; 0x2ac <LCD_voidWriteStr+0x10>
+ 2be:	df 91       	pop	r29
+ 2c0:	cf 91       	pop	r28
+ 2c2:	1f 91       	pop	r17
+ 2c4:	0f 91       	pop	r16
+ 2c6:	08 95       	ret
+
+000002c8 <LCD_voidSetXY>:
+
+void LCD_voidSetXY(char x, char y){
+	if(y == 0)
+ 2c8:	61 11       	cpse	r22, r1
+ 2ca:	04 c0       	rjmp	.+8      	; 0x2d4 <LCD_voidSetXY+0xc>
+		LCD_voidSendCmd(0x80 + x);
+ 2cc:	80 58       	subi	r24, 0x80	; 128
+ 2ce:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 2d2:	08 95       	ret
+	else if(y == 1)
+ 2d4:	61 30       	cpi	r22, 0x01	; 1
+ 2d6:	19 f4       	brne	.+6      	; 0x2de <LCD_voidSetXY+0x16>
+		LCD_voidSendCmd(0xC0 + x);
+ 2d8:	80 54       	subi	r24, 0x40	; 64
+ 2da:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 2de:	08 95       	ret
+
+000002e0 <LCD_voidNewScreen>:
+	LCD_voidSendCmd(0x80);
+	_delay_ms(1);
+}
+
+void	LCD_voidNewScreen(char* str)
+{
+ 2e0:	cf 93       	push	r28
+ 2e2:	df 93       	push	r29
+ 2e4:	ec 01       	movw	r28, r24
+	LCD_voidClear();
+ 2e6:	0e 94 44 01 	call	0x288	; 0x288 <LCD_voidClear>
+	LCD_voidSetXY(0,0);
+ 2ea:	60 e0       	ldi	r22, 0x00	; 0
+ 2ec:	80 e0       	ldi	r24, 0x00	; 0
+ 2ee:	0e 94 64 01 	call	0x2c8	; 0x2c8 <LCD_voidSetXY>
+	LCD_voidWriteStr(str);
+ 2f2:	ce 01       	movw	r24, r28
+ 2f4:	0e 94 4e 01 	call	0x29c	; 0x29c <LCD_voidWriteStr>
+ 2f8:	8f e3       	ldi	r24, 0x3F	; 63
+ 2fa:	9c e9       	ldi	r25, 0x9C	; 156
+ 2fc:	01 97       	sbiw	r24, 0x01	; 1
+ 2fe:	f1 f7       	brne	.-4      	; 0x2fc <LCD_voidNewScreen+0x1c>
+ 300:	00 c0       	rjmp	.+0      	; 0x302 <LCD_voidNewScreen+0x22>
+ 302:	00 00       	nop
+	_delay_ms(10);
+}
+ 304:	df 91       	pop	r29
+ 306:	cf 91       	pop	r28
+ 308:	08 95       	ret
+
+0000030a <LEDs_voidInit>:
+
+#include	"LED.h"
+
+
+void LEDs_voidInit(){
+	LEDDDR |= 0x07;
+ 30a:	84 b3       	in	r24, 0x14	; 20
+ 30c:	87 60       	ori	r24, 0x07	; 7
+ 30e:	84 bb       	out	0x14, r24	; 20
+	LEDPORT &= 0xF8; 
+ 310:	85 b3       	in	r24, 0x15	; 21
+ 312:	88 7f       	andi	r24, 0xF8	; 248
+ 314:	85 bb       	out	0x15, r24	; 21
+ 316:	08 95       	ret
+
+00000318 <LEDs_voidTurnOn>:
+}
+
+void LEDs_voidTurnOn(char LED){
+	LEDPORT |= (1<<LED);
+ 318:	95 b3       	in	r25, 0x15	; 21
+ 31a:	21 e0       	ldi	r18, 0x01	; 1
+ 31c:	30 e0       	ldi	r19, 0x00	; 0
+ 31e:	02 c0       	rjmp	.+4      	; 0x324 <LEDs_voidTurnOn+0xc>
+ 320:	22 0f       	add	r18, r18
+ 322:	33 1f       	adc	r19, r19
+ 324:	8a 95       	dec	r24
+ 326:	e2 f7       	brpl	.-8      	; 0x320 <LEDs_voidTurnOn+0x8>
+ 328:	29 2b       	or	r18, r25
+ 32a:	25 bb       	out	0x15, r18	; 21
+ 32c:	08 95       	ret
+
+0000032e <LEDs_voidTurnOff>:
+}
+
+void LEDs_voidTurnOff(char LED){
+	LEDPORT &= ~(1<<LED);	//0b1111 1000
+ 32e:	95 b3       	in	r25, 0x15	; 21
+ 330:	21 e0       	ldi	r18, 0x01	; 1
+ 332:	30 e0       	ldi	r19, 0x00	; 0
+ 334:	02 c0       	rjmp	.+4      	; 0x33a <LEDs_voidTurnOff+0xc>
+ 336:	22 0f       	add	r18, r18
+ 338:	33 1f       	adc	r19, r19
+ 33a:	8a 95       	dec	r24
+ 33c:	e2 f7       	brpl	.-8      	; 0x336 <LEDs_voidTurnOff+0x8>
+ 33e:	20 95       	com	r18
+ 340:	29 23       	and	r18, r25
+ 342:	25 bb       	out	0x15, r18	; 21
+ 344:	08 95       	ret
+
+00000346 <main>:
+static		unsigned	char	size_pass = 0;
+
+
+int main(void)
+{
+	LCD_voidInit();
+ 346:	0e 94 02 01 	call	0x204	; 0x204 <LCD_voidInit>
+	Keypad_voidInit();
+ 34a:	0e 94 99 00 	call	0x132	; 0x132 <Keypad_voidInit>
+	INT_voidInit();
+ 34e:	0e 94 75 00 	call	0xea	; 0xea <INT_voidInit>
+	Servo_voidInit();
+ 352:	0e 94 f2 02 	call	0x5e4	; 0x5e4 <Servo_voidInit>
+	Buzzer_voidInit();
+ 356:	0e 94 59 00 	call	0xb2	; 0xb2 <Buzzer_voidInit>
+	LEDs_voidInit();
+ 35a:	0e 94 85 01 	call	0x30a	; 0x30a <LEDs_voidInit>
+	
+	/*	Turn LEDs On and Off	*/
+	LEDs_voidTurnOn(LED_R);
+ 35e:	80 e0       	ldi	r24, 0x00	; 0
+ 360:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+	
+	/*	Display message		*/
+	LCD_voidNewScreen("Enter Password");
+ 364:	80 e6       	ldi	r24, 0x60	; 96
+ 366:	90 e0       	ldi	r25, 0x00	; 0
+ 368:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LCD_voidNewScreen>
+	LCD_voidSetXY(5,1);
+ 36c:	61 e0       	ldi	r22, 0x01	; 1
+ 36e:	85 e0       	ldi	r24, 0x05	; 5
+ 370:	0e 94 64 01 	call	0x2c8	; 0x2c8 <LCD_voidSetXY>
+	
+	/*	Waits for input, enables INT2	*/
+	INT_voidEnable(INT2);
+ 374:	85 e0       	ldi	r24, 0x05	; 5
+ 376:	0e 94 82 00 	call	0x104	; 0x104 <INT_voidEnable>
+ 37a:	ff cf       	rjmp	.-2      	; 0x37a <main+0x34>
+
+0000037c <check_password>:
+
+char	check_password(){
+	
+	unsigned char flag = 1;
+	
+	for(unsigned char i = 0; i<6; i++)
+ 37c:	20 e0       	ldi	r18, 0x00	; 0
+ 37e:	0d c0       	rjmp	.+26     	; 0x39a <check_password+0x1e>
+	{
+		if(password[i] != pass_check[i])
+ 380:	82 2f       	mov	r24, r18
+ 382:	90 e0       	ldi	r25, 0x00	; 0
+ 384:	fc 01       	movw	r30, r24
+ 386:	e5 57       	subi	r30, 0x75	; 117
+ 388:	ff 4f       	sbci	r31, 0xFF	; 255
+ 38a:	30 81       	ld	r19, Z
+ 38c:	fc 01       	movw	r30, r24
+ 38e:	ed 56       	subi	r30, 0x6D	; 109
+ 390:	ff 4f       	sbci	r31, 0xFF	; 255
+ 392:	80 81       	ld	r24, Z
+ 394:	38 13       	cpse	r19, r24
+ 396:	05 c0       	rjmp	.+10     	; 0x3a2 <check_password+0x26>
+
+char	check_password(){
+	
+	unsigned char flag = 1;
+	
+	for(unsigned char i = 0; i<6; i++)
+ 398:	2f 5f       	subi	r18, 0xFF	; 255
+ 39a:	26 30       	cpi	r18, 0x06	; 6
+ 39c:	88 f3       	brcs	.-30     	; 0x380 <check_password+0x4>
+	while (1);
+}
+
+char	check_password(){
+	
+	unsigned char flag = 1;
+ 39e:	81 e0       	ldi	r24, 0x01	; 1
+ 3a0:	08 95       	ret
+	
+	for(unsigned char i = 0; i<6; i++)
+	{
+		if(password[i] != pass_check[i])
+		{
+			flag = 0;
+ 3a2:	80 e0       	ldi	r24, 0x00	; 0
+			break;
+		}
+	}
+	return flag;
+}
+ 3a4:	08 95       	ret
+
+000003a6 <__vector_1>:
+
+
+ISR(INT0_vect)
+{
+ 3a6:	1f 92       	push	r1
+ 3a8:	0f 92       	push	r0
+ 3aa:	0f b6       	in	r0, 0x3f	; 63
+ 3ac:	0f 92       	push	r0
+ 3ae:	11 24       	eor	r1, r1
+ 3b0:	2f 93       	push	r18
+ 3b2:	3f 93       	push	r19
+ 3b4:	4f 93       	push	r20
+ 3b6:	5f 93       	push	r21
+ 3b8:	6f 93       	push	r22
+ 3ba:	7f 93       	push	r23
+ 3bc:	8f 93       	push	r24
+ 3be:	9f 93       	push	r25
+ 3c0:	af 93       	push	r26
+ 3c2:	bf 93       	push	r27
+ 3c4:	ef 93       	push	r30
+ 3c6:	ff 93       	push	r31
+	/*	When Button is pressed, close door	*/
+	LEDs_voidTurnOn(LED_R);
+ 3c8:	80 e0       	ldi	r24, 0x00	; 0
+ 3ca:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+	LEDs_voidTurnOff(LED_G);
+ 3ce:	82 e0       	ldi	r24, 0x02	; 2
+ 3d0:	0e 94 97 01 	call	0x32e	; 0x32e <LEDs_voidTurnOff>
+	
+	/*	Closes door			*/
+	Servo_voidSetPosition(300);
+ 3d4:	8c e2       	ldi	r24, 0x2C	; 44
+ 3d6:	91 e0       	ldi	r25, 0x01	; 1
+ 3d8:	0e 94 fc 02 	call	0x5f8	; 0x5f8 <Servo_voidSetPosition>
+	
+	/*	Display message		*/
+	LCD_voidNewScreen("Door Closed");
+ 3dc:	8f e6       	ldi	r24, 0x6F	; 111
+ 3de:	90 e0       	ldi	r25, 0x00	; 0
+ 3e0:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LCD_voidNewScreen>
+ 3e4:	2f ef       	ldi	r18, 0xFF	; 255
+ 3e6:	8d e3       	ldi	r24, 0x3D	; 61
+ 3e8:	99 e4       	ldi	r25, 0x49	; 73
+ 3ea:	21 50       	subi	r18, 0x01	; 1
+ 3ec:	80 40       	sbci	r24, 0x00	; 0
+ 3ee:	90 40       	sbci	r25, 0x00	; 0
+ 3f0:	e1 f7       	brne	.-8      	; 0x3ea <__vector_1+0x44>
+ 3f2:	00 c0       	rjmp	.+0      	; 0x3f4 <__vector_1+0x4e>
+ 3f4:	00 00       	nop
+	
+	/*	Delay 1.5 seconds	*/
+	_delay_ms(1500);
+	
+	/*	Enable interrupt of keypad and closes interrupt of door	*/
+	INT_voidEnable(INT2);
+ 3f6:	85 e0       	ldi	r24, 0x05	; 5
+ 3f8:	0e 94 82 00 	call	0x104	; 0x104 <INT_voidEnable>
+	INT_voidDisable(INT0);
+ 3fc:	86 e0       	ldi	r24, 0x06	; 6
+ 3fe:	0e 94 8d 00 	call	0x11a	; 0x11a <INT_voidDisable>
+	
+	/*	Display initial message	*/
+	LCD_voidNewScreen("Enter Password");
+ 402:	80 e6       	ldi	r24, 0x60	; 96
+ 404:	90 e0       	ldi	r25, 0x00	; 0
+ 406:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LCD_voidNewScreen>
+	
+	/*	Waits for input			*/
+	LCD_voidSetXY(5,1);
+ 40a:	61 e0       	ldi	r22, 0x01	; 1
+ 40c:	85 e0       	ldi	r24, 0x05	; 5
+ 40e:	0e 94 64 01 	call	0x2c8	; 0x2c8 <LCD_voidSetXY>
+	
+	/*	Reset index of password	for overwrite	*/
+	size_pass = 0;
+ 412:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <__data_end>
+}
+ 416:	ff 91       	pop	r31
+ 418:	ef 91       	pop	r30
+ 41a:	bf 91       	pop	r27
+ 41c:	af 91       	pop	r26
+ 41e:	9f 91       	pop	r25
+ 420:	8f 91       	pop	r24
+ 422:	7f 91       	pop	r23
+ 424:	6f 91       	pop	r22
+ 426:	5f 91       	pop	r21
+ 428:	4f 91       	pop	r20
+ 42a:	3f 91       	pop	r19
+ 42c:	2f 91       	pop	r18
+ 42e:	0f 90       	pop	r0
+ 430:	0f be       	out	0x3f, r0	; 63
+ 432:	0f 90       	pop	r0
+ 434:	1f 90       	pop	r1
+ 436:	18 95       	reti
+
+00000438 <__vector_3>:
+
+ISR(INT2_vect)
+{
+ 438:	1f 92       	push	r1
+ 43a:	0f 92       	push	r0
+ 43c:	0f b6       	in	r0, 0x3f	; 63
+ 43e:	0f 92       	push	r0
+ 440:	11 24       	eor	r1, r1
+ 442:	2f 93       	push	r18
+ 444:	3f 93       	push	r19
+ 446:	4f 93       	push	r20
+ 448:	5f 93       	push	r21
+ 44a:	6f 93       	push	r22
+ 44c:	7f 93       	push	r23
+ 44e:	8f 93       	push	r24
+ 450:	9f 93       	push	r25
+ 452:	af 93       	push	r26
+ 454:	bf 93       	push	r27
+ 456:	cf 93       	push	r28
+ 458:	ef 93       	push	r30
+ 45a:	ff 93       	push	r31
+	key = Keypad_charGetKey();
+ 45c:	0e 94 a3 00 	call	0x146	; 0x146 <Keypad_charGetKey>
+	
+	if(key >= '0' && key <= '9')
+ 460:	90 ed       	ldi	r25, 0xD0	; 208
+ 462:	98 0f       	add	r25, r24
+ 464:	9a 30       	cpi	r25, 0x0A	; 10
+ 466:	c0 f4       	brcc	.+48     	; 0x498 <__vector_3+0x60>
+	{
+		pass_check[size_pass] = key;
+ 468:	90 91 92 00 	lds	r25, 0x0092	; 0x800092 <__data_end>
+ 46c:	e9 2f       	mov	r30, r25
+ 46e:	f0 e0       	ldi	r31, 0x00	; 0
+ 470:	ed 56       	subi	r30, 0x6D	; 109
+ 472:	ff 4f       	sbci	r31, 0xFF	; 255
+ 474:	80 83       	st	Z, r24
+		size_pass++;
+ 476:	9f 5f       	subi	r25, 0xFF	; 255
+ 478:	90 93 92 00 	sts	0x0092, r25	; 0x800092 <__data_end>
+		LCD_voidSendData('*');
+ 47c:	8a e2       	ldi	r24, 0x2A	; 42
+ 47e:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <LCD_voidSendData>
+		
+		LEDs_voidTurnOn(LED_Y);
+ 482:	81 e0       	ldi	r24, 0x01	; 1
+ 484:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+		Buzzer_voidToggle(100);
+ 488:	84 e6       	ldi	r24, 0x64	; 100
+ 48a:	90 e0       	ldi	r25, 0x00	; 0
+ 48c:	0e 94 60 00 	call	0xc0	; 0xc0 <Buzzer_voidToggle>
+		LEDs_voidTurnOff(LED_Y);
+ 490:	81 e0       	ldi	r24, 0x01	; 1
+ 492:	0e 94 97 01 	call	0x32e	; 0x32e <LEDs_voidTurnOff>
+ 496:	31 c0       	rjmp	.+98     	; 0x4fa <__vector_3+0xc2>
+	}
+	else if(key == 'D')
+ 498:	84 34       	cpi	r24, 0x44	; 68
+ 49a:	79 f5       	brne	.+94     	; 0x4fa <__vector_3+0xc2>
+	{
+		/*	Auto Decrement Counter	*/
+		LCD_voidSendCmd(0x04);
+ 49c:	84 e0       	ldi	r24, 0x04	; 4
+ 49e:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 4a2:	8f e9       	ldi	r24, 0x9F	; 159
+ 4a4:	9f e0       	ldi	r25, 0x0F	; 15
+ 4a6:	01 97       	sbiw	r24, 0x01	; 1
+ 4a8:	f1 f7       	brne	.-4      	; 0x4a6 <__vector_3+0x6e>
+ 4aa:	00 c0       	rjmp	.+0      	; 0x4ac <__vector_3+0x74>
+ 4ac:	00 00       	nop
+		_delay_ms(1);
+		
+		/*	Write blank space twice	*/
+		LCD_voidSendData(' ');
+ 4ae:	80 e2       	ldi	r24, 0x20	; 32
+ 4b0:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <LCD_voidSendData>
+		LCD_voidSendData(' ');
+ 4b4:	80 e2       	ldi	r24, 0x20	; 32
+ 4b6:	0e 94 e8 00 	call	0x1d0	; 0x1d0 <LCD_voidSendData>
+		
+		/*	Buzzer signal			*/
+		LEDs_voidTurnOn(LED_Y);
+ 4ba:	81 e0       	ldi	r24, 0x01	; 1
+ 4bc:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+		Buzzer_voidToggle(100);
+ 4c0:	84 e6       	ldi	r24, 0x64	; 100
+ 4c2:	90 e0       	ldi	r25, 0x00	; 0
+ 4c4:	0e 94 60 00 	call	0xc0	; 0xc0 <Buzzer_voidToggle>
+		LEDs_voidTurnOff(LED_Y);
+ 4c8:	81 e0       	ldi	r24, 0x01	; 1
+ 4ca:	0e 94 97 01 	call	0x32e	; 0x32e <LEDs_voidTurnOff>
+		
+		/*	Decrement size_pass		*/
+		if(size_pass > 0)
+ 4ce:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <__data_end>
+ 4d2:	88 23       	and	r24, r24
+ 4d4:	19 f0       	breq	.+6      	; 0x4dc <__vector_3+0xa4>
+			size_pass--;
+ 4d6:	81 50       	subi	r24, 0x01	; 1
+ 4d8:	80 93 92 00 	sts	0x0092, r24	; 0x800092 <__data_end>
+		
+		/*	Auto Increment counter again	*/
+		LCD_voidSendCmd(0x06);
+ 4dc:	86 e0       	ldi	r24, 0x06	; 6
+ 4de:	0e 94 ce 00 	call	0x19c	; 0x19c <LCD_voidSendCmd>
+ 4e2:	8f e9       	ldi	r24, 0x9F	; 159
+ 4e4:	9f e0       	ldi	r25, 0x0F	; 15
+ 4e6:	01 97       	sbiw	r24, 0x01	; 1
+ 4e8:	f1 f7       	brne	.-4      	; 0x4e6 <__vector_3+0xae>
+ 4ea:	00 c0       	rjmp	.+0      	; 0x4ec <__vector_3+0xb4>
+ 4ec:	00 00       	nop
+		_delay_ms(1);
+		
+		/*	Sets LCD at same position		*/
+		LCD_voidSetXY(5+size_pass, 1);
+ 4ee:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <__data_end>
+ 4f2:	61 e0       	ldi	r22, 0x01	; 1
+ 4f4:	8b 5f       	subi	r24, 0xFB	; 251
+ 4f6:	0e 94 64 01 	call	0x2c8	; 0x2c8 <LCD_voidSetXY>
+	}
+	
+	if(size_pass == 6)
+ 4fa:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <__data_end>
+ 4fe:	86 30       	cpi	r24, 0x06	; 6
+ 500:	09 f0       	breq	.+2      	; 0x504 <__vector_3+0xcc>
+ 502:	4c c0       	rjmp	.+152    	; 0x59c <__vector_3+0x164>
+	{
+		if(check_password())
+ 504:	0e 94 be 01 	call	0x37c	; 0x37c <check_password>
+ 508:	88 23       	and	r24, r24
+ 50a:	c9 f0       	breq	.+50     	; 0x53e <__vector_3+0x106>
+		{
+			/*	Enable INT0 to close the door and disable INT2 for keypad	*/
+			INT_voidEnable(INT0);
+ 50c:	86 e0       	ldi	r24, 0x06	; 6
+ 50e:	0e 94 82 00 	call	0x104	; 0x104 <INT_voidEnable>
+			INT_voidDisable(INT2);
+ 512:	85 e0       	ldi	r24, 0x05	; 5
+ 514:	0e 94 8d 00 	call	0x11a	; 0x11a <INT_voidDisable>
+			
+			/*	Turn green led ON, turn red led OFF	*/
+			LEDs_voidTurnOn(LED_G);
+ 518:	82 e0       	ldi	r24, 0x02	; 2
+ 51a:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+			LEDs_voidTurnOff(LED_R);
+ 51e:	80 e0       	ldi	r24, 0x00	; 0
+ 520:	0e 94 97 01 	call	0x32e	; 0x32e <LEDs_voidTurnOff>
+			
+			/*	Turn buzzer ON for 1 second			*/
+			Buzzer_voidToggle(1000);
+ 524:	88 ee       	ldi	r24, 0xE8	; 232
+ 526:	93 e0       	ldi	r25, 0x03	; 3
+ 528:	0e 94 60 00 	call	0xc0	; 0xc0 <Buzzer_voidToggle>
+			
+			/*	Turns servo motor	*/
+			Servo_voidSetPosition(150);	//Equivalent to +90 degrees
+ 52c:	86 e9       	ldi	r24, 0x96	; 150
+ 52e:	90 e0       	ldi	r25, 0x00	; 0
+ 530:	0e 94 fc 02 	call	0x5f8	; 0x5f8 <Servo_voidSetPosition>
+			
+			/*	Display message		*/
+			LCD_voidNewScreen("Door Open");
+ 534:	8b e7       	ldi	r24, 0x7B	; 123
+ 536:	90 e0       	ldi	r25, 0x00	; 0
+ 538:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LCD_voidNewScreen>
+ 53c:	2f c0       	rjmp	.+94     	; 0x59c <__vector_3+0x164>
+		}
+		else
+		{	
+			/*	Display message		*/
+			LCD_voidNewScreen("Error");
+ 53e:	85 e8       	ldi	r24, 0x85	; 133
+ 540:	90 e0       	ldi	r25, 0x00	; 0
+ 542:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LCD_voidNewScreen>
+			
+			/*	Buzzer rings 3 short times	*/
+			for(char i = 0; i<3; i++)
+ 546:	c0 e0       	ldi	r28, 0x00	; 0
+ 548:	11 c0       	rjmp	.+34     	; 0x56c <__vector_3+0x134>
+			{
+				LEDs_voidTurnOn(LED_Y);
+ 54a:	81 e0       	ldi	r24, 0x01	; 1
+ 54c:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+				Buzzer_voidToggle(100);
+ 550:	84 e6       	ldi	r24, 0x64	; 100
+ 552:	90 e0       	ldi	r25, 0x00	; 0
+ 554:	0e 94 60 00 	call	0xc0	; 0xc0 <Buzzer_voidToggle>
+ 558:	8f e3       	ldi	r24, 0x3F	; 63
+ 55a:	9c e9       	ldi	r25, 0x9C	; 156
+ 55c:	01 97       	sbiw	r24, 0x01	; 1
+ 55e:	f1 f7       	brne	.-4      	; 0x55c <__vector_3+0x124>
+ 560:	00 c0       	rjmp	.+0      	; 0x562 <__vector_3+0x12a>
+ 562:	00 00       	nop
+				_delay_ms(10);
+				LEDs_voidTurnOff(LED_Y);
+ 564:	81 e0       	ldi	r24, 0x01	; 1
+ 566:	0e 94 97 01 	call	0x32e	; 0x32e <LEDs_voidTurnOff>
+		{	
+			/*	Display message		*/
+			LCD_voidNewScreen("Error");
+			
+			/*	Buzzer rings 3 short times	*/
+			for(char i = 0; i<3; i++)
+ 56a:	cf 5f       	subi	r28, 0xFF	; 255
+ 56c:	c3 30       	cpi	r28, 0x03	; 3
+ 56e:	68 f3       	brcs	.-38     	; 0x54a <__vector_3+0x112>
+ 570:	9f ef       	ldi	r25, 0xFF	; 255
+ 572:	29 e6       	ldi	r18, 0x69	; 105
+ 574:	88 e1       	ldi	r24, 0x18	; 24
+ 576:	91 50       	subi	r25, 0x01	; 1
+ 578:	20 40       	sbci	r18, 0x00	; 0
+ 57a:	80 40       	sbci	r24, 0x00	; 0
+ 57c:	e1 f7       	brne	.-8      	; 0x576 <__vector_3+0x13e>
+ 57e:	00 c0       	rjmp	.+0      	; 0x580 <__vector_3+0x148>
+ 580:	00 00       	nop
+			
+			/*	Wait for 1 second before allowing next attempt	*/
+			_delay_ms(500);
+			
+			/*	Display initial message	*/
+			LCD_voidNewScreen("Enter Password");
+ 582:	80 e6       	ldi	r24, 0x60	; 96
+ 584:	90 e0       	ldi	r25, 0x00	; 0
+ 586:	0e 94 70 01 	call	0x2e0	; 0x2e0 <LCD_voidNewScreen>
+			
+			/*	Turn Led Red On			*/
+			LEDs_voidTurnOn(LED_R);
+ 58a:	80 e0       	ldi	r24, 0x00	; 0
+ 58c:	0e 94 8c 01 	call	0x318	; 0x318 <LEDs_voidTurnOn>
+			
+			/*	Waits for input			*/
+			LCD_voidSetXY(5,1);
+ 590:	61 e0       	ldi	r22, 0x01	; 1
+ 592:	85 e0       	ldi	r24, 0x05	; 5
+ 594:	0e 94 64 01 	call	0x2c8	; 0x2c8 <LCD_voidSetXY>
+			
+			/*	Reset index of password	for overwrite	*/
+			size_pass = 0;
+ 598:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <__data_end>
+		}
+	}
+}
+ 59c:	ff 91       	pop	r31
+ 59e:	ef 91       	pop	r30
+ 5a0:	cf 91       	pop	r28
+ 5a2:	bf 91       	pop	r27
+ 5a4:	af 91       	pop	r26
+ 5a6:	9f 91       	pop	r25
+ 5a8:	8f 91       	pop	r24
+ 5aa:	7f 91       	pop	r23
+ 5ac:	6f 91       	pop	r22
+ 5ae:	5f 91       	pop	r21
+ 5b0:	4f 91       	pop	r20
+ 5b2:	3f 91       	pop	r19
+ 5b4:	2f 91       	pop	r18
+ 5b6:	0f 90       	pop	r0
+ 5b8:	0f be       	out	0x3f, r0	; 63
+ 5ba:	0f 90       	pop	r0
+ 5bc:	1f 90       	pop	r1
+ 5be:	18 95       	reti
+
+000005c0 <Timer1_voidInit>:
+#include	<util/delay.h>
+
+
+void Timer1_voidInit()
+{
+	TCCR1A = 0x00;						//Initialize TCCR1A with 0
+ 5c0:	1f bc       	out	0x2f, r1	; 47
+	TCCR1A |= (1<<WGM11);				//Selects Fast PWM mode 14
+ 5c2:	8f b5       	in	r24, 0x2f	; 47
+ 5c4:	82 60       	ori	r24, 0x02	; 2
+ 5c6:	8f bd       	out	0x2f, r24	; 47
+	
+	TCCR1B = 0x00;						//Initialize TCCR1B with 0
+ 5c8:	1e bc       	out	0x2e, r1	; 46
+	TCCR1B |= (1<<WGM13) | (1<<WGM12);	//Selects Fast PWM mode 14
+ 5ca:	8e b5       	in	r24, 0x2e	; 46
+ 5cc:	88 61       	ori	r24, 0x18	; 24
+ 5ce:	8e bd       	out	0x2e, r24	; 46
+	
+	TCCR1B |= (1<<CS11) | (1<<CS10);	//Selects Prescaler 64
+ 5d0:	8e b5       	in	r24, 0x2e	; 46
+ 5d2:	83 60       	ori	r24, 0x03	; 3
+ 5d4:	8e bd       	out	0x2e, r24	; 46
+	
+	TCNT1 = 0;
+ 5d6:	1d bc       	out	0x2d, r1	; 45
+ 5d8:	1c bc       	out	0x2c, r1	; 44
+	ICR1 = 4999;						//ICR1 defines the TOP value of the counter register TCNT1
+ 5da:	87 e8       	ldi	r24, 0x87	; 135
+ 5dc:	93 e1       	ldi	r25, 0x13	; 19
+ 5de:	97 bd       	out	0x27, r25	; 39
+ 5e0:	86 bd       	out	0x26, r24	; 38
+ 5e2:	08 95       	ret
+
+000005e4 <Servo_voidInit>:
+										//Counts from 0 to 4999, meaning 20ms or 50Hz
+}
+
+void Servo_voidInit()
+{
+	SERVODDR |= (1<<SPIN); 
+ 5e4:	81 b3       	in	r24, 0x11	; 17
+ 5e6:	80 62       	ori	r24, 0x20	; 32
+ 5e8:	81 bb       	out	0x11, r24	; 17
+	Timer1_voidInit();
+ 5ea:	0e 94 e0 02 	call	0x5c0	; 0x5c0 <Timer1_voidInit>
+	OCR1A = 300;
+ 5ee:	8c e2       	ldi	r24, 0x2C	; 44
+ 5f0:	91 e0       	ldi	r25, 0x01	; 1
+ 5f2:	9b bd       	out	0x2b, r25	; 43
+ 5f4:	8a bd       	out	0x2a, r24	; 42
+ 5f6:	08 95       	ret
+
+000005f8 <Servo_voidSetPosition>:
+}
+
+void Servo_voidSetPosition(int position)
+{
+ 5f8:	9c 01       	movw	r18, r24
+	TCCR1A |= (1<<COM1A1);				//OC1A works in non-inverted mode
+ 5fa:	9f b5       	in	r25, 0x2f	; 47
+ 5fc:	90 68       	ori	r25, 0x80	; 128
+ 5fe:	9f bd       	out	0x2f, r25	; 47
+	OCR1A = position;
+ 600:	3b bd       	out	0x2b, r19	; 43
+ 602:	2a bd       	out	0x2a, r18	; 42
+ 604:	2f ef       	ldi	r18, 0xFF	; 255
+ 606:	81 ee       	ldi	r24, 0xE1	; 225
+ 608:	94 e0       	ldi	r25, 0x04	; 4
+ 60a:	21 50       	subi	r18, 0x01	; 1
+ 60c:	80 40       	sbci	r24, 0x00	; 0
+ 60e:	90 40       	sbci	r25, 0x00	; 0
+ 610:	e1 f7       	brne	.-8      	; 0x60a <Servo_voidSetPosition+0x12>
+ 612:	00 c0       	rjmp	.+0      	; 0x614 <Servo_voidSetPosition+0x1c>
+ 614:	00 00       	nop
+	_delay_ms(100);
+	TCCR1A &= ~(1<<COM1A1);
+ 616:	8f b5       	in	r24, 0x2f	; 47
+ 618:	8f 77       	andi	r24, 0x7F	; 127
+ 61a:	8f bd       	out	0x2f, r24	; 47
+ 61c:	08 95       	ret
+
+0000061e <__tablejump2__>:
+ 61e:	ee 0f       	add	r30, r30
+ 620:	ff 1f       	adc	r31, r31
+ 622:	05 90       	lpm	r0, Z+
+ 624:	f4 91       	lpm	r31, Z
+ 626:	e0 2d       	mov	r30, r0
+ 628:	09 94       	ijmp
+
+0000062a <_exit>:
+ 62a:	f8 94       	cli
+
+0000062c <__stop_program>:
+ 62c:	ff cf       	rjmp	.-2      	; 0x62c <__stop_program>
